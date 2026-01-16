@@ -221,6 +221,22 @@ iframe:hover{
 
 
 		</style>
+		<script>
+  // Right click off
+  document.addEventListener("contextmenu", e => e.preventDefault());
+
+  // Key block
+  document.addEventListener("keydown", function(e) {
+    if (
+      e.key === "F12" ||
+      (e.ctrlKey && e.shiftKey && ["I","C","J"].includes(e.key)) ||
+      (e.ctrlKey && e.key === "u")
+    ) {
+      e.preventDefault();
+    }
+  });
+</script>
+
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Birthstone&display=swap" rel="stylesheet">
@@ -291,3 +307,4 @@ And if we meet again—Alhamdulillah, even if not, my best wishes for you will a
 
 
 </html>
+
