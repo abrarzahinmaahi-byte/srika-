@@ -221,27 +221,40 @@ iframe:hover{
 
 
 		</style>
-		<script>
-  // Right click off
-  document.addEventListener("contextmenu", e => e.preventDefault());
 
-  // Key block
-  document.addEventListener("keydown", function(e) {
-    if (
-      e.key === "F12" ||
-      (e.ctrlKey && e.shiftKey && ["I","C","J"].includes(e.key)) ||
-      (e.ctrlKey && e.key === "u")
-    ) {
-      e.preventDefault();
-    }
-  });
-</script>
 
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Birthstone&display=swap" rel="stylesheet">
 <title>HAPPY BIRTHDAY SARIKA TABASSUM</title>
 	</head>
+	<script>
+  // Disable right click
+  document.oncontextmenu = function () {
+    return false;
+  };
+
+  // Disable keys
+  document.onkeydown = function (e) {
+    e = e || window.event;
+
+    // F12
+    if (e.keyCode === 123) {
+      return false;
+    }
+
+    // Ctrl+Shift+I / J / C
+    if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) {
+      return false;
+    }
+
+    // Ctrl+U
+    if (e.ctrlKey && e.keyCode === 85) {
+      return false;
+    }
+  };
+</script>
+
 	<body>
 	<div class="happy">
 		<p class="v">
@@ -307,4 +320,5 @@ And if we meet again—Alhamdulillah, even if not, my best wishes for you will a
 
 
 </html>
+
 
